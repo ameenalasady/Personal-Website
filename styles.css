@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+body {
+    /* text-shadow: 0px 1px px rgba(0, 0, 0, 0.25); */
+    margin: 0;
+    font-family: 'Montserrat';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.seperation {
+    width: auto;
+    height: 1px;
+    background: #8458B3;
+}
+
+.navcontainer {
+    background: #e5eaf5;
+    padding: 1em 5vw;
+    margin: 0;
+    display: flex;
+    place-content: space-between;
+}
+
+.homebutton {
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    font-size: 3em;
+    font-style: normal;
+}
+
+.homebutton:hover {
+    color: #8458B3;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+nav {
+    display: none;
+}
+
+.mobile-menu {
+    cursor: pointer;
+}
+
+.hero {
+    background: #E5EAF5;
+    height: 56em;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.maintext {
+    padding: 0vw 0 0 0;
+}
+
+.hi {
+    font-size: 3em;
+    margin: 0;
+    padding: 0 0 0 5vw;
+}
+
+.myname {
+    padding: 0 0 0 5vw;
+    font-size: 4em;
+    margin: 0;
+    color: #8458B3;
+    font-weight: 700;
+}
+
+.mydescription {
+    padding: 0 0 0 5vw;
+    margin: 0;
+    font-size: 3em;
+}
+
+.socialsmain {
+    padding: 1em 0 0 5vw;
+}
+
+.githubmain {
+    padding-right: 2em;
+    filter: invert(47%) sepia(10%) saturate(2642%) hue-rotate(227deg) brightness(85%) contrast(101%);
+}
+
+.linkedinmain {
+    filter: invert(47%) sepia(10%) saturate(2642%) hue-rotate(227deg) brightness(85%) contrast(101%);
+}
+
+.aboutme {
+    margin: 0;
+    padding: 0;
+    background-color: #D0BDF4;
+    height: 1/10vw;
+    width: auto;
+    padding-top: 3em;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+.aboutmetitle {
+    color: black;
+    font-weight: normal;
+    margin: 0;
+    display: block;
+    /* text-align: center; */
+    font-size: 4em;
+    background-color: #D0BDF4;
+    padding-top: 1em;
+    padding-left: 5vw;
+}
+
+.aboutmetext1,
+.aboutmetext2,
+.aboutmetext3 {
+    margin: 0;
+    padding-left: 5vw;
+    font-size: 1.5em;
+    padding-bottom: 1em;
+    max-width: 1000px;
+    /* text-align: center; */
+}
+
+.aboutmetext1,
+.aboutmetext2 {
+    padding-bottom: 1em;
+}
+
+.projects {
+    margin: 0;
+    background-color: #85A5D4;
+    color: black;
+}
+
+.projectstitle {
+    margin: 0;
+    font-size: 4em;
+    /* text-align: center; */
+    padding-top: 1em;
+    padding-left: 5vw;
+    padding-bottom: 1em;
+}
+
+.discordimage {
+    width: 25em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.projectitems {
+    width: calc(100vw - (100vw - 100%));
+    display: flex;
+    place-content: start space-evenly;
+}
+
+.projectcontainer {
+    background-color: white;
+    ;
+    width: 25em;
+    /* display: flex;
+        flex-direction: column; */
+    border: #8458B3;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 14px;
+    margin-bottom: 3em;
+    padding-bottom: 2em;
+}
+
+.minordescription,
+.projecttitle,
+.majordescription,
+.followlink {
+    margin-left: 30px;
+}
+
+.projecttitle {
+    color: black;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.minordescription {
+    color: black;
+}
+
+.majordescription {
+    margin-bottom: 2em;
+}
+
+.followlink {
+    background: #494D5F;
+    color: white;
+    padding: 1em;
+    margin-bottom: 2em;
+    text-decoration: none;
+    border-radius: 0.5em;
+    margin-top: 2em;
+}
+
+
+/* .projectsnumber {
+        padding-left: 5vw;
+        font-size: 3em;
+        margin: 0;
+    }
+    
+    .projectimagediv {
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .projectpicture {
+        margin: 0px auto;
+    }
+    
+    .image1,
+    .image2 {
+        margin: 20px auto;
+        display: inline;
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .projectsdescription {
+        padding-left: 5vw;
+        font-size: 2em;
+        padding-bottom: 1em;
+        margin: 0;
+    } */
+
+.contact {
+    background-color: #494D5F;
+}
+
+.contacttitle {
+    margin: 0;
+    padding-top: 1em;
+    padding-left: 5vw;
+    font-size: 4em;
+    color: white;
+}
+
+.contactmessage {
+    padding-left: 5vw;
+    margin: 0;
+    font-size: 2em;
+    color: white;
+    padding-bottom: 2em;
+}
+
+.rowflex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 2em;
+    background: #494D5F;
+}
+
+.columnflex {
+    text-align: center;
+    background: #494D5F;
+}
+
+.email {
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.fa-envelope {
+    color: white;
+    font-size: 3em;
+    padding-bottom: 0.3em;
+}
+
+.linkedin {
+    color: white;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.fa-linkedin-in {
+    color: white;
+    font-size: 3em;
+    padding-bottom: 0.3em;
+}
+
+
+/* .contacticonsend {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.emaillistitem {
+    text-align: center;
+}
+
+.fa-envelope {
+    color: #8458B3;
+}
+
+.fa-linkedin-in {
+    color: #8458B3;
+}
+
+.emaildiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 6em;
+}
+
+.linkedindiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 6em;
+}
+
+.emailtext {
+    text-align: center;
+    color: white;
+    font-size: calc(1.5vw / 1vw);
+    text-decoration: none;
+}
+
+.linkedintext {
+    text-align: center;
+    color: white;
+    font-size: calc(1.5vw / 1vw);
+    text-decoration: none;
+}
+
+.emaillogo {
+    justify-content: center;
+    text-align: center;
+    font-size: 3em;
+}
+
+.linkedinlogo {
+    justify-content: center;
+    text-align: center;
+    font-size: 3em;
+}
+
+.contacttext {
+    display: flex;
+    flex-direction: row;
+    width: calc(100vw - (100vw - 100%));
+    padding-bottom: 2em;
+    text-decoration: none;
+    justify-content: space-evenly;
+}
+
+.linkedintextcontainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.emaillinktext {
+    text-decoration: none;
+} */
+
+.menu-btn {
+    display: block;
+    border-left: black;
+    border-style: solid;
+    border-width: 2px;
+    padding-right: 0em;
+    padding-top: 2em;
+}
+
+nav {
+    position: fixed;
+    z-index: 999;
+    width: 66%;
+    right: 0;
+    top: 0;
+    background: #8458B3;
+    height: 100vh;
+    padding: 5vw;
+}
+
+.navbuttons {
+    margin-top: 5em;
+}
+
+.aboutmebutton,
+.projectsbutton,
+.contactbutton {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    font-size: 2.5em;
+    text-align: right;
+}
+
+.aboutmebutton:hover,
+.projectsbutton:hover,
+.contactbutton:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.mobile-menu-exit {
+    float: right;
+    font-size: 2.5em;
+    padding-right: 1em;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 900px) {
+    .mobile-menu,
+    .mobile-menu-exit {
+        display: none;
+    }
+    .navcontainer {
+        display: grid;
+        grid-template-columns: 180px auto;
+        justify-content: unset;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+        background: none;
+        position: unset;
+        z-index: 999;
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+    .navbuttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        /* align-items: right; */
+        margin: 4.5px 0 0 0;
+    }
+    .aboutmebutton,
+    .projectsbutton,
+    .contactbutton {
+        color: black;
+        text-decoration: none;
+        display: flex;
+        padding: 0;
+        font-size: 2.5em;
+        text-align: center;
+        margin-left: 30px;
+    }
+    .aboutmebutton:hover,
+    .projectsbutton:hover,
+    .contactbutton:hover {
+        color: #8458B3;
+        text-decoration: underline;
+    }
+    .menu-btn {
+        border-width: 0;
+    }
+}
+
+@media only screen and (max-width: 925px) {
+    .projectitems {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        padding-left: 0;
+    }
+}
