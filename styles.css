@@ -178,7 +178,7 @@ span {
     width: 25em;
     /* display: flex;
         flex-direction: column; */
-    border: #8458B3;
+    border: #494D5F;
     border-width: 1px;
     border-style: solid;
     border-radius: 14px;
@@ -191,6 +191,7 @@ span {
 .majordescription,
 .followlink {
     margin-left: 30px;
+    margin-right: 30px;
 }
 
 .projecttitle {
