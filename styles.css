@@ -299,7 +299,7 @@ span {
     margin: 0;
     font-size: 2em;
     color: black;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
 }
 
 .rowflex {
@@ -314,7 +314,7 @@ span {
 .columnflex {
     text-align: center;
     background: white;
-    padding-right: 3em;
+    padding-right: 35px;
 }
 
 .email {
@@ -339,6 +339,17 @@ span {
     color: black;
     font-size: 3em;
     padding-bottom: 0.3em;
+}
+
+.contactandplane {
+    display: flex;
+}
+
+#planeanimation {
+    height: 50vh;
+    width: 50vw;
+    margin-left: -10vw;
+    margin-top: -8vh;
 }
 
 .menu-btn {

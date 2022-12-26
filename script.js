@@ -103,3 +103,16 @@ $(function() {
         $(".main").removeClass("active");
     });
 });
+
+var animation = bodymovin.loadAnimation({
+    // animationData: { /* ... */ },
+    container: document.getElementById("planeanimation"), // required
+    path: "/imgs/YswvQaDXE2.json", // required
+    renderer: "svg", // required
+    loop: true, // optional
+    autoplay: true, // optional
+    name: "Demo Animation", // optional
+    rendererSettings: {
+        scaleMode: "cover",
+    },
+});
