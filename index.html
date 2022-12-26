@@ -12,6 +12,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png" />
     <link rel="manifest" href="favicons/site.webmanifest" />
+    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -19,18 +21,16 @@
 
     <div class="navbar">
         <div class="navcontainer">
-            <a class="homebutton" href="index.html">Home</a>
+            <a class="homebutton" data-tab-target="#main">Home</a>
 
             <img id="mobile-cta" class="mobile-menu" src="imgs/menu.svg" alt="hamburger menu" />
 
             <nav>
                 <img id="mobile-exit" class="mobile-menu-exit" src="imgs/exit.svg" alt="" />
                 <ul class="navbuttons">
-                    <li><a class="aboutmebutton" href="#aboutmetitle">About Me</a></li>
-                    <li>
-                        <a class="projectsbutton" href="#projectstitle">Projects</a>
-                    </li>
-                    <li><a class="contactbutton" href="#contacttitle">Contact</a></li>
+                    <li class="aboutmebutton">About Me</li>
+                    <li class="projectsbutton">Projects</li>
+                    <li class="contactbutton">Contact</li>
                 </ul>
             </nav>
         </div>
@@ -38,10 +38,10 @@
 
     <div class="seperation"></div>
 
-    <section class="hero">
+    <div class="main active" id="main" data-tab-content>
         <div class="containerhero">
             <div class="maintext">
-                <p class="hi">Hi, 👋</p>
+                <p class="hi">Hi,</p>
                 <p class="myname">I am Ameen <span>Al-Asady,</span></p>
                 <p class="mydescription">
                     an engineering student passionate about all things tech.
@@ -50,142 +50,80 @@
         </div>
 
         <div class="socialsmain">
-            <a href="https://github.com/ameenalasady" class="githubmain"><img src="imgs/iconmonstr-github-1.svg" alt="github main screen link" /></a>
-            <a href="https://www.linkedin.com/in/ameen-al-asady-ba944a146/" class="linkedinmain"><img src="imgs/iconmonstr-linkedin-3.svg" alt="linkedin main screen link" /></a>
+            <a href="https://github.com/ameenalasady" class="githubmain"><img src="imgs/iconmonstr-github-1.svg" alt="github main
+                        screen link" /></a>
+            <a href="https://www.linkedin.com/in/ameenalasady/" class="linkedinmain"><img src="imgs/iconmonstr-linkedin-3.svg" alt="linkedin main
+                        screen link" /></a>
         </div>
-    </section>
+    </div>
 
-    <div class="seperation"></div>
-
-    <section>
-        <p class="aboutmetitle" id="aboutmetitle">About Me</p>
-    </section>
-
-    <section class="aboutme">
+    <div class="aboutmeinmain" id="aboutme " data-tab-content>
         <p class="aboutmetext1">
-            I am a third year mechatronics systems engineering undergraduate student at Western University, London, ON, graduating 2024.
+            I am a highly motivated student currently pursuing a dual degree in Mechatronics Engineering and Computer Science at Western University. With a strong foundation in both technical and creative thinking, I am eager to contribute my skills and knowledge
+            to an internship in the software or computer science industry. I am actively seeking short and long-term internships starting Summer 2023 to gain hands-on experience and further develop my skills in these fields. I am confident in my ability
+            to adapt and learn quickly, and am excited for the opportunity to work with and learn from industry professionals.
         </p>
-        <p class="aboutmetext2">
-            My primary interests are in creating applicable mechatronic and software systems that work hand in hand to solve real-life problems.
+    </div>
+
+    <section class="projects" id="projects " data-tab-content>
+        <p class="projectsnote">
+            Please note that this list is still a work in progress. The same project is listed twice to showcase the grid layout.
         </p>
-        <p class="aboutmetext3">
-            I am specifically skilled in working with Java, C++ and Python, among other modern programming languages. I am also knowledgeable in working with Arduino microcontrollers with various shields such as motor drivers and WiFi modules .
-        </p>
-    </section>
-
-    <div class="seperation"></div>
-
-    <section class="projects">
-        <p class="projectstitle" id="projectstitle">Projects</p>
-
         <div class="projectitems">
             <div class="projectcontainer">
-                <a href="https://github.com/hamza-al/discord-bot" class="discordlink"><img class="discordimage" src="imgs/discord.jpg" alt="" /></a>
+                <a href="https://github.com/hamza-al/discord-bot " class="discordlink"><img class="discordimage" draggable="false " src="imgs/discord.jpg " alt=" " /></a>
                 <p class="minordescription">Python</p>
                 <p class="projecttitle">Discord Bot</p>
                 <p class="majordescription">
                     A fun and engaging discord bot with instructions on how to reuse on any server
                 </p>
 
-                <a href="https://github.com/hamza-al/discord-bot" class="followlink">View</a
+                <a href="https://github.com/hamza-al/discord-bot " class="followlink">View</a
           >
         </div>
 
         <div class="projectcontainer">
-          <a href="https://github.com/hamza-al/discord-bot" class="discordlink"
-            ><img class="discordimage" src="imgs/discord.jpg" alt=""
+          <a href="https://github.com/hamza-al/discord-bot " class="discordlink"
+            ><img class="discordimage" src="imgs/discord.jpg " alt=" "
           /></a>
                 <p class="minordescription">Python</p>
                 <p class="projecttitle">Discord Bot</p>
                 <p class="majordescription">
                     A fun and engaging discord bot with instructions on how to reuse on any server
                 </p>
-                <a href="https://github.com/hamza-al/discord-bot" class="followlink">View</a
+                <a href="https://github.com/hamza-al/discord-bot " class="followlink">View</a
           >
         </div>
       </div>
-
-      <!-- <p class="projectstitle">Projects</p>
-
-        <p class="projectsnumber">1)</p>
-        <div class="projectimagediv">
-            <a href="https://github.com/hamza-al/hamza-s-website" class="projectpicture"><img class="image1" src="/imgs/Screenshot_2.png" alt="project 1 image links to git" /></a>
-            </div>
-            <p class="projectsdescription">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p class="projectsnumber">2)</p>
-            <div class="projectimagediv">
-                <a href="https://github.com/hamza-al/hamza-s-website" class="projectpicture"><img class="image2" src="/imgs/Screenshot_2.png" alt="project 1 image links to git" /></a>
-            </div>
-            <p class="projectsdescription">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p> -->
     </section>
 
-    <div class="seperation"></div>
+    <section class="contact" id="contact " data-tab-content>
+      <p class="contacttitle" id="contacttitle ">Contact</p>
+      <p class="contactmessage">I’d Love To Connect With You</p>
 
-    <section class="contact">
-        <p class="contacttitle" id="contacttitle">Contact</p>
-        <p class="contactmessage">I’d Love To Connect With You</p>
-
-        <!-- <ul class="contacticonsend">
-            <li class="emaillistitem">
-                <a class="emaillogo" href="mailto:ameenaladdin@gmail.com?subject=Let's Talk"><i class="fa fa-envelope"></i
-          ></a>
-                
-            <li>
-                <a class="linkedinlogo" href="https://ca.linkedin.com/in/hamza-al-sorkhy-7024021b9" class="linkedinbuttonend"><i class="fa-brands fa-linkedin-in"></i
-          ></a>
-                
-            </li>
-        </ul> -->
-
-        <!-- <ul class="contacttext">
-            <li class="emailtestcontainer">
-                <a href="mailto:ameenaladdin@gmail.com?subject=Let's Talk" class="emaillinktext">
-                    <p class="emailtext">Email Me At <br />ameenaladdin@gmail.com</p>
-                </a>
-            </li>
-
-            <li class="linkedintextcontainer">
-                <a href="https://ca.linkedin.com/in/hamza-al-sorkhy-7024021b9" class="linkedintext">
-                    <p class="linkedintext">Let’s Connect</p>
-                </a>
-            </li>
-        </ul> -->
-
-        <div class="rowflex">
-            <div class="columnflex">
-                <a href="mailto:ameenaladdin@gmail.com?subject=Let's Talk" class="email">
-                    <i class="fa fa-envelope"></i> <br />Email Me At
-                    <br />ameenaladdin@gmail.com
-                </a>
+      <div class="rowflex">
+        <div class="columnflex">
+          <a
+            href="mailto:ameenaladdin@gmail.com?subject=Let 's Talk"
+            class="email"
+          >
+            <i class="fa fa-envelope"></i> <br />Email Me
+          </a>
             </div>
 
             <div class="columnflex">
-                <a href="https://www.linkedin.com/in/ameen-al-asady-ba944a146/" class="linkedin">
+                <a href="https://www.linkedin.com/in/ameenalasady/" class="linkedin">
                     <i class="fa-brands fa-linkedin-in"></i> <br />Let’s Connect
                 </a>
             </div>
         </div>
     </section>
 
-    <div class="seperation"></div>
-
-    <script>
-        const mobileBtn = document.getElementById("mobile-cta");
-        const nav = document.querySelector("nav");
-        const mobileBtnExit = document.getElementById("mobile-exit");
-
-        mobileBtn.addEventListener("click", () => {
-            nav.classList.add("menu-btn");
-        });
-
-        mobileBtnExit.addEventListener("click", () => {
-            nav.classList.remove("menu-btn");
-        });
-    </script>
+    <div class="togglecontainer">
+        <input id="toggle" class="toggle" type="checkbox" checked />
+        <div class="background"></div>
+        <label for="toggle " class="title">Toggle Dark Mode</label>
+    </div>
 </body>
 
 </html>
