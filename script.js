@@ -14,8 +14,9 @@ mobileBtnExit.addEventListener("click", () => {
 
 //These jQuery functions can be optimized by using multiple selectors for similar elements.
 //Will be implemented in a future update.
-//All of these functions are for toggling dark mode.
+
 $(function() {
+    //All of these functions are for toggling dark mode.
     $("input[type='checkbox']").change(function() {
         if ($(this).is(":checked")) {
             $(".togglecontainer").css("background", "white");
@@ -41,6 +42,10 @@ $(function() {
             $(".email, .fa-envelope, .linkedin, .fa-linkedin-in").css(
                 "color",
                 "black"
+            );
+            $(".projectnavigationbuttonright, .projectnavigationbuttonleft").css(
+                "filter",
+                "none"
             );
         } else {
             $(".togglecontainer").css("background", "hsl(240, 100%, 10%)");
@@ -70,11 +75,14 @@ $(function() {
                 "color",
                 "white"
             );
+            $(".projectnavigationbuttonright, .projectnavigationbuttonleft").css(
+                "filter",
+                "invert(100%) sepia(0%) saturate(7482%) hue-rotate(219deg) brightness(107%) contrast(105%)"
+            );
         }
     });
 
     //This is for switching pages.
-
     $(".homebutton").on("click", function() {
         $(".main").addClass("active");
         $(".projects").removeClass("active");
@@ -101,6 +109,21 @@ $(function() {
         $(".projects").removeClass("active");
         $(".aboutmeinmain").removeClass("active");
         $(".main").removeClass("active");
+    });
+
+    //This is for navigating between projects on mobile.
+    $(".projectnavigationbuttonright").on("click", function() {
+        $(".projectitem2").addClass("activeproject");
+        $(".projectitem1").removeClass("activeproject");
+        $(".projectnavigationbuttonright").css("display", "none");
+        $(".projectnavigationbuttonleft").css("display", "block");
+    });
+
+    $(".projectnavigationbuttonleft").on("click", function() {
+        $(".projectitem1").addClass("activeproject");
+        $(".projectitem2").removeClass("activeproject");
+        $(".projectnavigationbuttonleft").css("display", "none");
+        $(".projectnavigationbuttonright").css("display", "block");
     });
 });
 
