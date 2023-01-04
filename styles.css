@@ -187,7 +187,7 @@ span {
     margin-right: 1em;
     padding-left: 5vw;
     font-size: 1.75em;
-    padding-bottom: none;
+    padding-bottom: 0;
     padding-top: 5vh;
     width: 75vw;
     line-height: 1.6;
@@ -395,7 +395,6 @@ nav {
 .aboutmebutton:hover,
 .projectsbutton:hover,
 .contactbutton:hover {
-    color: black;
     text-decoration: underline;
 }
 
@@ -540,4 +539,22 @@ nav {
     .mydescription {
         font-size: 2.2em;
     }
+}
+
+.dark {
+    background: hsl(240, 100%, 10%);
+    color: white;
+}
+
+.darkfilter {
+    filter: invert(100%) sepia(100%) saturate(31%) hue-rotate(60deg) brightness(105%) contrast(109%);
+}
+
+.light {
+    background: white;
+    color: black;
+}
+
+.lightfilter {
+    filter: none;
 }

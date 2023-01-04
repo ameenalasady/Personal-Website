@@ -12,73 +12,46 @@ mobileBtnExit.addEventListener("click", () => {
     nav.classList.remove("menu-btn");
 });
 
-//These jQuery functions can be optimized by using multiple selectors for similar elements.
-//Will be implemented in a future update.
-
 $(function() {
-    //All of these functions are for toggling dark mode.
-    $("input[type='checkbox']").change(function() {
-        if ($(this).is(":checked")) {
-            $(".togglecontainer").css("background", "white");
-            $(".navcontainer").css("background", "white");
-            $(".main").css("background", "white");
-            $(".aboutmeinmain").css("background", "white");
-            $(".projectitems").css("background", "white");
-            $(".contact").css("background", "white");
-            $(".rowflex").css("background", "white");
-            $(".columnflex").css("background", "white");
-            $(".projectsnote").css("background", "white");
-            $(".projectsnote").css("color", "black");
-            $(".hi").css("color", "black");
-            $(".mydescription").css("color", "black");
-            $(".homebutton").css("color", "black");
-            $(".aboutmebutton").css("color", "black");
-            $(".projectsbutton").css("color", "black");
-            $(".contactbutton").css("color", "black");
-            $(".aboutmetext1").css("color", "black");
-            $(".contacttitle").css("color", "black");
-            $(".contactmessage").css("color", "black");
-            $(".mobile-menu").css("filter", "none");
-            $(".email, .fa-envelope, .linkedin, .fa-linkedin-in").css(
-                "color",
-                "black"
-            );
-            $(".projectnavigationbuttonright, .projectnavigationbuttonleft").css(
-                "filter",
-                "none"
-            );
+    console.log("ready");
+    darklightElements =
+        ".togglecontainer, .navcontainer, .main, .aboutmeinmain, .projectitems, .contact, .rowflex, .columnflex, .projectsnote, .hi, .mydescription, .homebutton, .aboutmebutton, .projectsbutton, .contactbutton, .aboutmetext1, .contacttitle, .contactmessage, .email, .fa-envelope, .linkedin, .fa-linkedin-in";
+    darklightfilterElements =
+        ".mobile-menu, .projectnavigationbuttonright, .projectnavigationbuttonleft";
+
+    if (localStorage.isDarkMode) {
+        if (localStorage.isDarkMode == "true") {
+            $("#toggle").prop("checked", false);
+            $(darklightElements).removeClass("light");
+            $(darklightfilterElements).removeClass("lightfilter");
+            $(darklightElements).addClass("dark");
+            $(darklightfilterElements).addClass("darkfilter");
         } else {
-            $(".togglecontainer").css("background", "hsl(240, 100%, 10%)");
-            $(".navcontainer").css("background", "hsl(240, 100%, 10%)");
-            $(".main").css("background", "hsl(240, 100%, 10%)");
-            $(".aboutmeinmain").css("background", "hsl(240, 100%, 10%)");
-            $(".projectitems").css("background", "hsl(240, 100%, 10%)");
-            $(".contact").css("background", "hsl(240, 100%, 10%)");
-            $(".rowflex").css("background", "hsl(240, 100%, 10%)");
-            $(".columnflex").css("background", "hsl(240, 100%, 10%)");
-            $(".projectsnote").css("background", "hsl(240, 100%, 10%)");
-            $(".projectsnote").css("color", "white");
-            $(".hi").css("color", "white");
-            $(".mydescription").css("color", "white");
-            $(".homebutton").css("color", "white");
-            $(".aboutmebutton").css("color", "white");
-            $(".projectsbutton").css("color", "white");
-            $(".contactbutton").css("color", "white");
-            $(".aboutmetext1").css("color", "white");
-            $(".contacttitle").css("color", "white");
-            $(".contactmessage").css("color", "white");
-            $(".mobile-menu").css(
-                "filter",
-                "invert(100%) sepia(100%) saturate(31%) hue-rotate(60deg) brightness(105%) contrast(109%)"
-            );
-            $(".email, .fa-envelope, .linkedin, .fa-linkedin-in").css(
-                "color",
-                "white"
-            );
-            $(".projectnavigationbuttonright, .projectnavigationbuttonleft").css(
-                "filter",
-                "invert(100%) sepia(0%) saturate(7482%) hue-rotate(219deg) brightness(107%) contrast(105%)"
-            );
+            $("#toggle").prop("checked", true);
+            $(darklightElements).removeClass("dark");
+            $(darklightfilterElements).removeClass("darkfilter");
+            $(darklightElements).addClass("light");
+            $(darklightfilterElements).addClass("lightfilter");
+        }
+    } else {
+        localStorage.isDarkMode = false;
+        $("#toggle").prop("checked", true);
+    }
+
+    //All of these functions are for toggling dark mode.
+    $("#toggle").change(function() {
+        if ($(this).is(":checked") == true) {
+            localStorage.setItem("isDarkMode", false);
+            $(darklightElements).removeClass("dark");
+            $(darklightfilterElements).removeClass("darkfilter");
+            $(darklightElements).addClass("light");
+            $(darklightfilterElements).addClass("lightfilter");
+        } else if ($(this).is(":checked") == false) {
+            localStorage.setItem("isDarkMode", true);
+            $(darklightElements).removeClass("light");
+            $(darklightfilterElements).removeClass("lightfilter");
+            $(darklightElements).addClass("dark");
+            $(darklightfilterElements).addClass("darkfilter");
         }
     });
 
@@ -139,3 +112,4 @@ var animation = bodymovin.loadAnimation({
         scaleMode: "cover",
     },
 });
+//This unfortunately doesn't show on GitHub sites.
