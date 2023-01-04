@@ -305,7 +305,7 @@ span {
 
 .contact {
     background: white;
-    height: 90vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -386,7 +386,7 @@ span {
 nav {
     position: fixed;
     z-index: 999;
-    width: 66%;
+    width: 60%;
     right: 0;
     top: 0;
     height: 100vh;
@@ -405,6 +405,8 @@ nav {
     text-decoration: none;
     display: block;
     padding: 1em;
+    padding-left: 0em;
+    padding-right: 0.65em;
     font-size: 2.5em;
     text-align: right;
 }
@@ -418,8 +420,12 @@ nav {
 .mobile-menu-exit {
     float: right;
     font-size: 2.5em;
-    padding-right: 1em;
+    padding-right: 0.65em;
     cursor: pointer;
+}
+
+.navigationforprojects {
+    height: 0;
 }
 
 @media only screen and (min-width: 900px) {
@@ -478,6 +484,13 @@ nav {
         padding-left: 0;
         padding-bottom: 5000px;
     }
+    .togglecontainer {
+        bottom: 1vh;
+        right: 2vw;
+    }
+    .title {
+        font-size: 1.1em;
+    }
     .hi {
         padding: 10vh 0 0 5vw;
     }
@@ -510,14 +523,14 @@ nav {
     .projectnavigationbuttonright {
         display: block;
         position: relative;
-        bottom: 21em;
-        right: -14em;
+        bottom: -23em;
+        right: -90vw;
         transform: scale(2);
     }
     .projectnavigationbuttonleft {
         position: relative;
-        bottom: 20em;
-        right: 14em;
+        bottom: -23em;
+        right: -5vw;
         transform: scale(2);
     }
     .projectnavigationbuttonright:hover,
@@ -546,17 +559,14 @@ nav {
     .justaspacer {
         width: 0em;
     }
-    .hi {
-        padding-top: 15vh;
-    }
 }
 
 @media only screen and (max-width: 530px) {
     .projectcontainer {
-        width: 80vw;
+        width: 75vw;
     }
     .discordimage {
-        width: 80vw;
+        width: 75vw;
     }
     .followlink {
         text-align: center;
