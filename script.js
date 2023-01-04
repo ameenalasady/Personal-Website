@@ -14,24 +14,32 @@ mobileBtnExit.addEventListener("click", () => {
 
 $(function() {
     console.log("ready");
-    darklightElements =
-        ".togglecontainer, .navcontainer, .main, .aboutmeinmain, .projectitems, .contact, .rowflex, .columnflex, .projectsnote, .hi, .mydescription, .homebutton, .aboutmebutton, .projectsbutton, .contactbutton, .aboutmetext1, .contacttitle, .contactmessage, .email, .fa-envelope, .linkedin, .fa-linkedin-in";
+    darklightColorElements =
+        ".projectsnote, .hi, .mydescription, .homebutton, .aboutmebutton, .projectsbutton, .contactbutton, .aboutmetext1, .contacttitle, .contactmessage, .email, .fa-envelope, .linkedin, .fa-linkedin-in";
+    darklightBackgroundElements =
+        ".navcontainer, .main, .aboutmeinmain, .projectitems, .contact, .rowflex, .columnflex, .projectsnote";
     darklightfilterElements =
         ".mobile-menu, .projectnavigationbuttonright, .projectnavigationbuttonleft";
 
     if (localStorage.isDarkMode) {
         if (localStorage.isDarkMode == "true") {
             $("#toggle").prop("checked", false);
-            $(darklightElements).removeClass("light");
+            $(darklightColorElements).removeClass("lightColor");
+            $(darklightBackgroundElements).removeClass("lightBackground");
             $(darklightfilterElements).removeClass("lightfilter");
-            $(darklightElements).addClass("dark");
+            $(darklightColorElements).addClass("darkColor");
+            $(darklightBackgroundElements).addClass("darkBackground");
             $(darklightfilterElements).addClass("darkfilter");
+            $(nav).css("background", "#000066");
         } else {
             $("#toggle").prop("checked", true);
-            $(darklightElements).removeClass("dark");
+            $(darklightColorElements).removeClass("darkColor");
+            $(darklightBackgroundElements).removeClass("darkBackground");
             $(darklightfilterElements).removeClass("darkfilter");
-            $(darklightElements).addClass("light");
+            $(darklightColorElements).addClass("lightColor");
+            $(darklightBackgroundElements).addClass("lightBackground");
             $(darklightfilterElements).addClass("lightfilter");
+            $(nav).css("background", "#8458B3");
         }
     } else {
         localStorage.isDarkMode = false;
@@ -42,16 +50,22 @@ $(function() {
     $("#toggle").change(function() {
         if ($(this).is(":checked") == true) {
             localStorage.setItem("isDarkMode", false);
-            $(darklightElements).removeClass("dark");
+            $(darklightColorElements).removeClass("darkColor");
+            $(darklightBackgroundElements).removeClass("darkBackground");
             $(darklightfilterElements).removeClass("darkfilter");
-            $(darklightElements).addClass("light");
+            $(darklightColorElements).addClass("lightColor");
+            $(darklightBackgroundElements).addClass("lightBackground");
             $(darklightfilterElements).addClass("lightfilter");
+            $(nav).css("background", "#8458B3");
         } else if ($(this).is(":checked") == false) {
             localStorage.setItem("isDarkMode", true);
-            $(darklightElements).removeClass("light");
+            $(darklightColorElements).removeClass("lightColor");
+            $(darklightBackgroundElements).removeClass("lightBackground");
             $(darklightfilterElements).removeClass("lightfilter");
-            $(darklightElements).addClass("dark");
+            $(darklightColorElements).addClass("darkColor");
+            $(darklightBackgroundElements).addClass("darkBackground");
             $(darklightfilterElements).addClass("darkfilter");
+            $(nav).css("background", "#000066");
         }
     });
 
@@ -61,6 +75,7 @@ $(function() {
         $(".projects").removeClass("active");
         $(".contact").removeClass("active");
         $(".aboutmeinmain").removeClass("active");
+        $(".togglecontainer").css("display", "grid");
     });
 
     $(".aboutmebutton").on("click", function() {
@@ -68,6 +83,7 @@ $(function() {
         $(".projects").removeClass("active");
         $(".contact").removeClass("active");
         $(".main").removeClass("active");
+        $(".togglecontainer").css("display", "grid");
     });
 
     $(".projectsbutton").on("click", function() {
@@ -75,6 +91,7 @@ $(function() {
         $(".aboutmeinmain").removeClass("active");
         $(".contact").removeClass("active");
         $(".main").removeClass("active");
+        $(".togglecontainer").css("display", "none");
     });
 
     $(".contactbutton").on("click", function() {
@@ -82,6 +99,7 @@ $(function() {
         $(".projects").removeClass("active");
         $(".aboutmeinmain").removeClass("active");
         $(".main").removeClass("active");
+        $(".togglecontainer").css("display", "grid");
     });
 
     //This is for navigating between projects on mobile.
@@ -98,6 +116,14 @@ $(function() {
         $(".projectnavigationbuttonleft").css("display", "none");
         $(".projectnavigationbuttonright").css("display", "block");
     });
+});
+
+$(window).resize(function() {
+    if ($("#projects").hasClass("active")) {
+        $(".togglecontainer").css("display", "none");
+    } else {
+        $(".togglecontainer").css("display", "grid");
+    }
 });
 
 var animation = bodymovin.loadAnimation({

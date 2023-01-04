@@ -68,28 +68,39 @@ nav {
 .main {
     /* background: #E5EAF5; */
     background: white;
-    height: 70vh;
+    height: 100vh;
     padding-right: 1em;
 }
 
-.title {
+.togglecontainer {
+    display: grid;
     position: absolute;
     bottom: 5vh;
-    right: 5vw;
-    font-size: 2em;
+    right: 2vw;
+}
+
+.title {
+    /* position: absolute;
+    bottom: 5vh;
+    right: 5vw; */
+    font-size: 1.5em;
+    margin: 0 auto;
 }
 
 .toggle {
     z-index: 1;
-    position: absolute;
+    /* position: absolute;
     bottom: 12vh;
-    right: 10.5vw;
+    right: 10.5vw; */
+    margin: 0 auto;
     --size: 5rem;
     appearance: none;
     outline: none;
     cursor: pointer;
     width: var(--size);
     height: var(--size);
+    max-width: 38vw;
+    max-height: 38vw;
     box-shadow: inset calc(var(--size)*0.33) calc(var(--size)*-0.25) 0;
     border-radius: 999px;
     color: white;
@@ -179,7 +190,7 @@ span {
 
 .aboutmeinmain {
     background: white;
-    height: 100vw;
+    height: 100vh;
     padding: 1em 0 18vw 0;
 }
 
@@ -192,14 +203,17 @@ span {
     width: 75vw;
     line-height: 1.6;
     margin-top: 0;
+    height: 50vh;
+    z-index: 9999999;
     /* text-align: center; */
 }
 
-.togglecontainer {
+
+/* .togglecontainer {
     display: block;
     background: white;
     height: 50vh;
-}
+} */
 
 .projects {
     margin: 0;
@@ -226,8 +240,9 @@ span {
     width: calc(100vw - (100vw - 100%));
     display: flex;
     place-content: start space-evenly;
-    padding-top: 5vh;
+    padding-top: 2em;
     background: white;
+    padding-bottom: 5000px;
 }
 
 .projectcontainer {
@@ -246,6 +261,8 @@ span {
     padding-top: 2em;
     font-size: 1.5em;
     margin: 0;
+    padding-left: 3vw;
+    padding-right: 3vw;
 }
 
 .minordescription,
@@ -289,6 +306,7 @@ span {
 .contact {
     background: white;
     height: 90vh;
+    width: 100%;
 }
 
 .contacttitle {
@@ -319,7 +337,6 @@ span {
 .columnflex {
     text-align: center;
     background: white;
-    padding-right: 35px;
 }
 
 .email {
@@ -331,7 +348,7 @@ span {
 .fa-envelope {
     color: black;
     font-size: 3em;
-    padding-bottom: 0.3em;
+    padding-bottom: 0.1em;
 }
 
 .linkedin {
@@ -343,11 +360,7 @@ span {
 .fa-linkedin-in {
     color: black;
     font-size: 3em;
-    padding-bottom: 0.3em;
-}
-
-.contactandplane {
-    display: flex;
+    padding-bottom: 0.1em;
 }
 
 #planeanimation {
@@ -452,36 +465,36 @@ nav {
     }
 }
 
-@media only screen and (max-width: 925px) {
+@media only screen and (max-width: 900px) {
     .projectitems {
         display: flex;
         flex-direction: column;
         align-items: center;
         align-self: center;
         padding-left: 0;
+        padding-bottom: 5000px;
     }
     .hi {
         padding: 10vh 0 0 5vw;
     }
-    .title {
+    /* .title {
         bottom: 3vh;
-        font-size: 1em;
-    }
-    .toggle {
+        font-size: 1em; */
+    /* .toggle {
         position: absolute;
-        bottom: 6vh;
-        right: 13vw;
-        --size: 20vw;
-    }
+        /* bottom: 6vh;
+        right: 13vw; */
     .aboutmetext1 {
         font-size: 1.15em;
-        width: 90vw
+        width: 90vw;
     }
     .projectsnote {
-        font-size: 1em;
+        font-size: 1.2em;
     }
     .projectitems {
         padding-top: 2em;
+        /* display: grid;
+        grid-auto-flow: column; */
     }
     .projectitem1,
     .projectitem2 {
@@ -492,16 +505,15 @@ nav {
     }
     .projectnavigationbuttonright {
         display: block;
-        position: absolute;
-        bottom: 45vh;
-        right: 3vw;
+        position: relative;
+        bottom: 21em;
+        right: -14em;
         transform: scale(2);
     }
     .projectnavigationbuttonleft {
-        display: block;
-        position: absolute;
-        bottom: 44vh;
-        right: 93vw;
+        position: relative;
+        bottom: 20em;
+        right: 14em;
         transform: scale(2);
     }
     .projectnavigationbuttonright:hover,
@@ -511,14 +523,24 @@ nav {
     .contacttitle {
         padding: 0;
         text-align: center;
-        margin-top: 5vh;
+        padding-top: 5vh;
     }
     .contactmessage {
         padding: 0;
+        padding-left: 2vw;
+        padding-right: 2vw;
         text-align: center;
     }
     .rowflex {
         margin-top: 5vh;
+    }
+    .rowflex {
+        display: grid;
+        padding: 0;
+        grid-auto-flow: column;
+    }
+    .hi {
+        padding-top: 15vh;
     }
 }
 
@@ -541,18 +563,24 @@ nav {
     }
 }
 
-.dark {
-    background: hsl(240, 100%, 10%);
+.darkColor {
     color: white;
+}
+
+.darkBackground {
+    background: hsl(240, 100%, 10%);
 }
 
 .darkfilter {
     filter: invert(100%) sepia(100%) saturate(31%) hue-rotate(60deg) brightness(105%) contrast(109%);
 }
 
-.light {
-    background: white;
+.lightColor {
     color: black;
+}
+
+.lightBackground {
+    background: white;
 }
 
 .lightfilter {
