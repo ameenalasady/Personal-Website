@@ -331,12 +331,16 @@ span {
     /* justify-content: space-evenly; */
     padding-bottom: 2em;
     background: white;
-    padding-left: 6em;
+    padding-left: 5vw;
 }
 
 .columnflex {
     text-align: center;
     background: white;
+}
+
+.justaspacer {
+    width: 2em;
 }
 
 .email {
@@ -385,9 +389,9 @@ nav {
     width: 66%;
     right: 0;
     top: 0;
-    background: #8458B3;
     height: 100vh;
     padding: 5vw;
+    backdrop-filter: blur(15px);
 }
 
 .navbuttons {
@@ -538,6 +542,9 @@ nav {
         display: grid;
         padding: 0;
         grid-auto-flow: column;
+    }
+    .justaspacer {
+        width: 0em;
     }
     .hi {
         padding-top: 15vh;

@@ -30,7 +30,7 @@ $(function() {
             $(darklightColorElements).addClass("darkColor");
             $(darklightBackgroundElements).addClass("darkBackground");
             $(darklightfilterElements).addClass("darkfilter");
-            $(nav).css("background", "#000066");
+            $(".mobile-menu-exit").css("filter", "none");
         } else {
             $("#toggle").prop("checked", true);
             $(darklightColorElements).removeClass("darkColor");
@@ -39,7 +39,7 @@ $(function() {
             $(darklightColorElements).addClass("lightColor");
             $(darklightBackgroundElements).addClass("lightBackground");
             $(darklightfilterElements).addClass("lightfilter");
-            $(nav).css("background", "#8458B3");
+            $(".mobile-menu-exit").css("filter", "invert(1)");
         }
     } else {
         localStorage.isDarkMode = false;
@@ -56,7 +56,7 @@ $(function() {
             $(darklightColorElements).addClass("lightColor");
             $(darklightBackgroundElements).addClass("lightBackground");
             $(darklightfilterElements).addClass("lightfilter");
-            $(nav).css("background", "#8458B3");
+            $(".mobile-menu-exit").css("filter", "invert(1)");
         } else if ($(this).is(":checked") == false) {
             localStorage.setItem("isDarkMode", true);
             $(darklightColorElements).removeClass("lightColor");
@@ -65,9 +65,15 @@ $(function() {
             $(darklightColorElements).addClass("darkColor");
             $(darklightBackgroundElements).addClass("darkBackground");
             $(darklightfilterElements).addClass("darkfilter");
-            $(nav).css("background", "#000066");
+            $(".mobile-menu-exit").css("filter", "none");
         }
     });
+
+    // $(".mobile-menu").on("click", function() {
+    //     if (localStorage.isDarkMode == true) {
+
+    //     }
+    // });
 
     //This is for switching pages.
     $(".homebutton").on("click", function() {
@@ -119,6 +125,8 @@ $(function() {
 });
 
 $(window).resize(function() {
+    if ($(window).width() > 899) {}
+
     if ($("#projects").hasClass("active")) {
         $(".togglecontainer").css("display", "none");
     } else {
