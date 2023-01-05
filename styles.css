@@ -234,6 +234,8 @@ span {
     width: 25em;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    height: 17.5em;
+    object-fit: cover;
 }
 
 .projectitems {
