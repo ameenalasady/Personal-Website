@@ -12,6 +12,10 @@ mobileBtnExit.addEventListener("click", () => {
     nav.classList.remove("menu-btn");
 });
 
+let projectActive = 1;
+
+projectitems = [".projectitem1", ".projectitem2", ".projectitem3"];
+
 $(function() {
     console.log("ready");
     darklightColorElements =
@@ -110,27 +114,83 @@ $(function() {
 
     //This is for navigating between projects on mobile.
     $(".projectnavigationbuttonright").on("click", function() {
-        $(".projectitem2").addClass("activeproject");
-        $(".projectitem1").removeClass("activeproject");
-        $(".projectnavigationbuttonright").css("display", "none");
-        $(".projectnavigationbuttonleft").css("display", "block");
+        projectActive++;
+        // $(".projectitem2").addClass("activeproject");
+        // $(".projectitem1").removeClass("activeproject");
+        // $(".projectnavigationbuttonright").css("display", "none");
+        // $(".projectnavigationbuttonleft").css("display", "block");
+        if (projectActive == 3) {
+            $(".projectnavigationbuttonright").css("visibility", "hidden");
+            $(".projectnavigationbuttonleft").css("visibility", "visible");
+        }
+
+        if (projectActive == 1) {
+            $(".projectnavigationbuttonright").css("visibility", "visible");
+            $(".projectnavigationbuttonleft").css("visibility", "hidden");
+        }
+
+        if (projectActive != 1 && projectActive != 3) {
+            $(".projectnavigationbuttonleft").css("visibility", "visible");
+            $(".projectnavigationbuttonright").css("visibility", "visible");
+        }
+
+        for (let i = 0; i < projectitems.length; i++) {
+            $(projectitems[i]).removeClass("activeproject");
+        }
+
+        $(projectitems[projectActive - 1]).addClass("activeproject");
     });
 
     $(".projectnavigationbuttonleft").on("click", function() {
-        $(".projectitem1").addClass("activeproject");
-        $(".projectitem2").removeClass("activeproject");
-        $(".projectnavigationbuttonleft").css("display", "none");
-        $(".projectnavigationbuttonright").css("display", "block");
+        projectActive--;
+        if (projectActive == 3) {
+            $(".projectnavigationbuttonright").css("visibility", "hidden");
+            $(".projectnavigationbuttonleft").css("visibility", "visible");
+        }
+
+        if (projectActive == 1) {
+            $(".projectnavigationbuttonright").css("visibility", "visible");
+            $(".projectnavigationbuttonleft").css("visibility", "hidden");
+        }
+
+        if (projectActive != 1 && projectActive != 3) {
+            $(".projectnavigationbuttonleft").css("visibility", "visible");
+            $(".projectnavigationbuttonright").css("visibility", "visible");
+        }
+        for (let i = 0; i < projectitems.length; i++) {
+            $(projectitems[i]).removeClass("activeproject");
+        }
+
+        $(projectitems[projectActive - 1]).addClass("activeproject");
     });
 });
 
 $(window).resize(function() {
-    if ($(window).width() > 899) {}
+    if ($(window).width() > 1271) {
+        $(".projectnavigationbuttonleft").css("visibility", "hidden");
+        $(".projectnavigationbuttonright").css("visibility", "hidden");
+    }
 
-    if ($("#projects").hasClass("active")) {
-        $(".togglecontainer").css("display", "none");
-    } else {
-        $(".togglecontainer").css("display", "grid");
+    // if ($("#projects").hasClass("active")) {
+    //     $(".togglecontainer").css("display", "none");
+    // } else {
+    //     $(".togglecontainer").css("display", "grid");
+    // }
+    else {
+        if (projectActive == 3) {
+            $(".projectnavigationbuttonright").css("visibility", "hidden");
+            $(".projectnavigationbuttonleft").css("visibility", "visible");
+        }
+
+        if (projectActive == 1) {
+            $(".projectnavigationbuttonright").css("visibility", "visible");
+            $(".projectnavigationbuttonleft").css("visibility", "hidden");
+        }
+
+        if (projectActive != 1 && projectActive != 3) {
+            $(".projectnavigationbuttonleft").css("visibility", "visible");
+            $(".projectnavigationbuttonright").css("visibility", "visible");
+        }
     }
 });
 

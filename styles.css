@@ -168,7 +168,7 @@ span {
 }
 
 .githubmain {
-    padding-right: 2em;
+    margin-right: 2em;
     filter: invert(47%) sepia(10%) saturate(2642%) hue-rotate(227deg) brightness(85%) contrast(101%);
 }
 
@@ -239,12 +239,22 @@ span {
 }
 
 .projectitems {
-    width: calc(100vw - (100vw - 100%));
-    display: flex;
+    width: 100vw;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 10px 1fr 1fr 1fr 10px;
     place-content: start space-evenly;
-    padding-top: 2em;
+    padding-top: 3em;
     background: white;
     padding-bottom: 5000px;
+    align-items: center;
+}
+
+.projectitem1,
+.projectitem2,
+.projectitem3 {
+    display: flex;
+    margin: auto;
 }
 
 .projectcontainer {
@@ -284,7 +294,8 @@ span {
 
 .projectnavigationbuttonright,
 .projectnavigationbuttonleft {
-    display: none;
+    display: block;
+    visibility: hidden;
 }
 
 .minordescription {
@@ -428,6 +439,7 @@ nav {
 
 .navigationforprojects {
     height: 0;
+    display: flex;
 }
 
 @media only screen and (min-width: 900px) {
@@ -477,22 +489,65 @@ nav {
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1271px) {
     .projectitems {
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-top: 1em;
+    }
+    .projectsnote {
+        padding-top: 1em;
+        font-size: 1.2em;
+    }
+    .projectitem1,
+    .projectitem2,
+    .projectitem3 {
+        display: none;
+    }
+    .activeproject {
+        display: block;
+    }
+    .projectnavigationbuttonright {
+        visibility: visible;
+        justify-self: start;
+        padding-left: 10px;
+        /* position: relative;
+        bottom: -23em;
+        right: -90vw; */
+        transform: scale(2);
+    }
+    .projectnavigationbuttonleft {
+        visibility: hidden;
+        justify-self: end;
+        padding-right: 10px;
+        /* position: relative;
+        bottom: -23em;
+        right: -5vw; */
+        transform: scale(2);
+    }
+    .projectnavigationbuttonright:hover,
+    .projectnavigationbuttonleft:hover {
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    /* .projectitems {
         display: flex;
         flex-direction: column;
         align-items: center;
         align-self: center;
         padding-left: 0;
         padding-bottom: 5000px;
+    } */
+    /* .projectitems {
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-top: 1em;
     }
-    .togglecontainer {
-        bottom: 1vh;
-        right: 2vw;
-    }
-    .title {
-        font-size: 1.1em;
-    }
+    .projectsnote {
+        padding-top: 1em;
+    } */
     .hi {
         padding: 10vh 0 0 5vw;
     }
@@ -507,38 +562,9 @@ nav {
         font-size: 1.15em;
         width: 90vw;
     }
-    .projectsnote {
+    /* .projectsnote {
         font-size: 1.2em;
-    }
-    .projectitems {
-        padding-top: 2em;
-        /* display: grid;
-        grid-auto-flow: column; */
-    }
-    .projectitem1,
-    .projectitem2 {
-        display: none;
-    }
-    .activeproject {
-        display: block;
-    }
-    .projectnavigationbuttonright {
-        display: block;
-        position: relative;
-        bottom: -23em;
-        right: -90vw;
-        transform: scale(2);
-    }
-    .projectnavigationbuttonleft {
-        position: relative;
-        bottom: -23em;
-        right: -5vw;
-        transform: scale(2);
-    }
-    .projectnavigationbuttonright:hover,
-    .projectnavigationbuttonleft:hover {
-        cursor: pointer;
-    }
+    } */
     .contacttitle {
         padding: 0;
         text-align: center;
@@ -565,13 +591,19 @@ nav {
 
 @media only screen and (max-width: 530px) {
     .projectcontainer {
-        width: 75vw;
+        width: 80vw;
     }
     .discordimage {
-        width: 75vw;
+        width: 80vw;
     }
     .followlink {
         text-align: center;
+    }
+    .projectnavigationbuttonleft {
+        padding-right: 5px;
+    }
+    .projectnavigationbuttonright {
+        padding-left: 5px;
     }
 }
 
